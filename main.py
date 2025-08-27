@@ -43,10 +43,15 @@ def main():
     print("=" * 40)
     
     casos_teste = [
-        (12, 34),
-        (123, 456),
-        (1234, 5678),
-        (12345, 67890),
+        # Casos base (pelo menos um número com 1 dígito)
+        (5, 7),           # ambos 1 dígito
+        (9, 123),         # primeiro 1 dígito
+        (456, 8),         # segundo 1 dígito
+        
+        # Casos recursivos
+        (12, 34),         
+        (123, 456),       
+        (1234, 5678),    
         (123456789, 987654321)
     ]
     
