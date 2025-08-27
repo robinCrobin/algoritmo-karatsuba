@@ -1,4 +1,4 @@
-def karatsuba(x: int, y: int) -> int:
+def karatsuba(x: int, y: int) -> int: #A
     """
     Implementação do algoritmo de Karatsuba para multiplicação rápida.
     
@@ -10,33 +10,33 @@ def karatsuba(x: int, y: int) -> int:
         int: Produto de x e y
     """
     # Caso base: se algum dos números tem apenas 1 dígito
-    if x < 10 or y < 10:
-        return x * y
+    if x < 10 or y < 10: #B
+        return x * y #C
     
     # Calcula o número de dígitos do maior número
-    n = max(len(str(x)), len(str(y)))
+    n = max(len(str(x)), len(str(y))) #D
     
     # Se n é ímpar, adiciona 1 para facilitar a divisão
-    m = n // 2
+    m = n // 2 # E
     
     # Divide os números em duas partes
-    divisor = 10 ** m
+    divisor = 10 ** m #F
     
-    a = x // divisor  # Parte alta de x
-    b = x % divisor   # Parte baixa de x
-    c = y // divisor  # Parte alta de y
-    d = y % divisor   # Parte baixa de y
+    a = x // divisor  # Parte alta de x #G
+    b = x % divisor   # Parte baixa de x #H
+    c = y // divisor  # Parte alta de y #I
+    d = y % divisor   # Parte baixa de y #J
     
     # Três multiplicações recursivas (ao invés de quatro)
-    ac = karatsuba(a, c)          # a * c
-    bd = karatsuba(b, d)          # b * d
-    ad_bc = karatsuba(a + b, c + d) - ac - bd  # (a+b)(c+d) - ac - bd = ad + bc
+    ac = karatsuba(a, c)          # a * c #K
+    bd = karatsuba(b, d)          # b * d #L
+    ad_bc = karatsuba(a + b, c + d) - ac - bd  # (a+b)(c+d) - ac - bd = ad + bc #M
     
     # Combina os resultados usando a fórmula de Karatsuba
     # xy = ac * 10^(2m) + (ad + bc) * 10^m + bd
-    resultado = ac * (10 ** (2 * m)) + ad_bc * (10 ** m) + bd
+    resultado = ac * (10 ** (2 * m)) + ad_bc * (10 ** m) + bd #N
     
-    return resultado
+    return resultado #O
 
 def main():
     print("ALGORITMO DE KARATSUBA")
