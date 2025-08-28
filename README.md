@@ -150,38 +150,18 @@ O grafo também pode ser representado pelos seguintes nós e arestas:
 #### Cálculo da Complexidade Ciclomática
 **M = E - V + 2P**
 **M = 10 - 10 + 2(1) = 2**
+#### Complexidade Ciclomática: M = 2
 
-A complexidade ciclomática é **2**, indicando que há **2 caminhos independentes** através do código:
-1. Caminho do caso base (números pequenos)
-2. Caminho da recursão (números grandes)
+**2 caminhos independentes:**
+1. Caso base (x < 10 ou y < 10)
+2. Caso recursivo (números grandes)
 
-#### Validação da Cobertura de Caminhos
+#### Temporal: O(n^1.585)
 
-Os testes implementados na função `main()` cobrem completamente ambos os caminhos:
+**Melhor, Médio e Pior Caso:** O(n^1.585)
+- Sempre mais eficiente que O(n²) tradicional
+- Vantagem aumenta com números maiores
 
-**Caminho 1 - Caso Base (testado 3 vezes):**
-- `(5, 7)` - ambos números com 1 dígito
-- `(9, 123)` - primeiro número com 1 dígito  
-- `(456, 8)` - segundo número com 1 dígito
+#### Espacial: O(n)
 
-**Caminho 2 - Caso Recursivo (testado 4 vezes):**
-- `(12, 34)` - números pequenos com 2 dígitos
-- `(123, 456)` - números médios com 3 dígitos
-- `(1234, 5678)` - números maiores com 4 dígitos
-- `(123456789, 987654321)` - números muito grandes
-
-### Análise da Complexidade Assintótica
-
-#### Complexidade Temporal
-
-**Melhor Caso:** O(n^log₂3)
-- Ocorre quando os números têm tamanhos similares e são divididos de forma balanceada
-- O algoritmo sempre realiza 3 multiplicações recursivas
-
-**Caso Médio:** O(n^log₂3)
-- Para a maioria dos casos práticos, o comportamento é consistente
-- Significativamente melhor que O(n²) da multiplicação tradicional
-
-**Pior Caso:** O(n^log₂3)
-- Mesmo no pior caso, mantém a complexidade logarítmica
-- Não há degradação significativa do desempenho
+#### Recorrência: T(n) = 3T(n/2) + O(n) = O(n^1.585)
