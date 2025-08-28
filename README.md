@@ -48,15 +48,16 @@ c, d = divmod(y, divisor)
 ```
 Usa `divmod()` para obter simultaneamente quociente e resto, dividindo cada número em partes alta e baixa de forma mais eficiente.
 
-**Linhas 11-13:** Três multiplicações recursivas
+**Linhas 11-14:** Três multiplicações recursivas
 ```python
 ac = karatsuba(a, c)
 bd = karatsuba(b, d)
-ad_bc = karatsuba(a + b, c + d) - ac - bd
+ad_bc = karatsuba(a + b, c + d)
+ad_bc = ad_bc - ac - bd
 ```
 Realiza as três multiplicações necessárias usando recursão (ao invés de quatro).
 
-**Linha 15:** Combinação dos resultados
+**Linha 16:** Combinação dos resultados
 ```python
 return ac * (divisor ** 2) + ad_bc * divisor + bd
 ```
