@@ -118,6 +118,7 @@ ALGORITMO DE KARATSUBA
 
 O grafo de fluxo de controle da função `karatsuba` pode ser representado pelo seguinte diagrama:
 
+![Diagrama do Grafo de Fluxo de Controle](diagrama.png)
 
 O grafo também pode ser representado pelos seguintes nós e arestas:
 
